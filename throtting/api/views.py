@@ -35,7 +35,13 @@ class HelloView(APIView):
 
     def get(self, request):
         return Response({"message": "Hello welcome the page"})
-    
+
+
+
+
+
+
+
 class userView(APIView):
     permission_classes = [permissions.AllowAny]
 
