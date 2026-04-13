@@ -2,7 +2,7 @@ name: Django CI
 
 on:
   push:
-    branches: [ "feature/first-upload", "test", "main" ]
+    branches: [ "feature/*", "test", "main" ]
   pull_request:
     branches: [ "test", "main" ]
 
@@ -31,13 +31,13 @@ jobs:
 
     - name: Run migrations
       run: |
-        python manage.py migrate
+        python expense_project/manage.py migrate
 
     - name: Run tests
       run: |
-        python manage.py test
+        python expense_project/manage.py test
 
-    - name: Lint check (optional but recommended)
+    - name: Lint check (optional)
       run: |
         pip install flake8
         flake8 .
