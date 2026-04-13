@@ -48,12 +48,20 @@ class userView(APIView):
     def get(self, request):
         return Response({"message": "Hello welcome the user page"})
     
+
+
+
+    
 class profileView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
         return Response({"message": "Hello welcome the user profile page"})
     
+
+
+
+
 
 
 class tempView(APIView):
@@ -67,6 +75,10 @@ class userlevelView(APIView):
     def get(self, request):
         return Response({"message": "Hello welcome the user level page "})
     
+
+
+
+
 
 
     
