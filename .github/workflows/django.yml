@@ -11,9 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
-      max-parallel: 2
       matrix:
-        python-version: [3.9, 3.10]
+        python-version: [3.9, 3.10]   # ✅ ONLY these versions
 
     env:
       DJANGO_SETTINGS_MODULE: expense_project.settings
@@ -41,8 +40,3 @@ jobs:
       run: |
         cd expense_project
         python manage.py test
-
-    - name: Lint check (optional)
-      run: |
-        pip install flake8
-        flake8 . || true
