@@ -35,20 +35,55 @@ class HelloView(APIView):
 
     def get(self, request):
         return Response({"message": "Hello welcome the page"})
-    
+
+
+
+
+
+
+
 class userView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
         return Response({"message": "Hello welcome the user page"})
     
+
+
+
+    
 class profileView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
         return Response({"message": "Hello welcome the user profile page"})
+    
+
+
+
+
+
+
 class tempView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
         return Response({"message": "Hello welcome the temp page"})
+class userlevelView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        return Response({"message": "Hello welcome the user level page "})
+    
+
+
+
+
+
+
+    
+class userleveloneView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        return Response({"message": "Hello welcome the user level one page "})
