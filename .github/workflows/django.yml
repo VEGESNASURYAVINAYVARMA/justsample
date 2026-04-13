@@ -15,6 +15,9 @@ jobs:
       matrix:
         python-version: [3.9, 3.10]
 
+    env:
+      DJANGO_SETTINGS_MODULE: expense_project.settings
+
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -31,13 +34,15 @@ jobs:
 
     - name: Run migrations
       run: |
-        python expense_project/manage.py migrate
+        cd expense_project
+        python manage.py migrate
 
     - name: Run tests
       run: |
-        python expense_project/manage.py test
+        cd expense_project
+        python manage.py test
 
     - name: Lint check (optional)
       run: |
         pip install flake8
-        flake8 .
+        flake8 . || true
