@@ -56,4 +56,9 @@ class userlevelView(APIView):
     permission_classes = [permissions.AllowAny]
 
     def get(self, request):
-        return Response({"message": "Hello welcome the user level page"})
+        return Response({"message": "Hello welcome the user level page "})
+class userleveloneView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        return Response({"message": "Hello welcome the user level one page "})
