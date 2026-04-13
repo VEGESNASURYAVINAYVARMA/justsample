@@ -3,8 +3,6 @@ name: Django CI
 on:
   push:
     branches: [ "feature/*", "test", "main" ]
-  pull_request:
-    branches: [ "test", "main" ]
 
 jobs:
   build:
@@ -12,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        python-version: [3.9, 3.10]   # ✅ ONLY these versions
+        python-version: [3.10]   # ✅ ONLY ONE VERSION (SAFE)
 
     env:
       DJANGO_SETTINGS_MODULE: expense_project.settings
