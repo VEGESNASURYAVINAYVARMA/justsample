@@ -52,3 +52,8 @@ class tempView(APIView):
 
     def get(self, request):
         return Response({"message": "Hello welcome the temp page"})
+class userlevelView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    def get(self, request):
+        return Response({"message": "Hello welcome the user level page"})
